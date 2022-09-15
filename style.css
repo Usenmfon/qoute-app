@@ -1,0 +1,29 @@
+body{
+    box-sizing: border-box;
+    padding: 0;
+    border: 0;
+}
+
+form{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+section{
+    margin-top: 100px;
+    display: none;
+}
+
+table{
+    width: 400px;
+    font-size: 32px;
+}
+
+table, thead, td{
+    border: solid gray;
+}
+
+button{
+    margin-top: 50px;
+}
