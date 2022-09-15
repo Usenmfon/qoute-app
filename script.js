@@ -41,7 +41,7 @@ function totalSum(data){
 let tr, td_1, td_2;
 
 function displayResult(data){
-    
+    recent_button.setAttribute('disabled', true)
     if(data){
         section.style.display = "block";
     }
