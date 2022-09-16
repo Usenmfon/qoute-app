@@ -40,7 +40,7 @@ function totalSum(obj){
    return sum.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
 }
 
-let tr, td_1, td_2;
+let tr, td_1, td_2, serial_number = 0;
 
 function displayResult(data){
     recent_button.setAttribute('disabled', true)
@@ -50,14 +50,17 @@ function displayResult(data){
     data.push({ item: "Total", price: totalSum(data) })
 
     for(let i in data){
+
         tr = document.createElement('tr');
         td_1 = document.createElement('td');
         td_2 = document.createElement('td');
+        td_3 = document.createElement('td');
 
-        td_1.innerText = data[i].item
-        td_2.innerText = data[i].price
+        td_1.innerText = ++serial_number
+        td_2.innerText = data[i].item
+        td_3.innerText = data[i].price
 
-        tr.append(td_1, td_2)
+        tr.append(td_1, td_2, td_3)
         table_body.appendChild(tr)
     }
 }
