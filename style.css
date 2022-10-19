@@ -10,6 +10,19 @@ form{
     flex-direction: column;
 }
 
+input{
+    margin-top: 5px;
+    color: white;
+    font-weight: bold;
+    background-color: #75E4B3;
+    border: solid #75E4B3;
+    border-radius: 2.5px;
+}
+input:hover{
+    background-color: #75e47a;
+    border: solid #75e47a;
+
+}
 section{
     margin-top: 100px;
     display: none;
@@ -19,12 +32,43 @@ section{
 table{
     width: 100%;
     font-size: 32px;
+    border: solid #D3C1D2;
+    border-radius: 5px;
+
 }
 
-table, thead, td{
-    border: solid gray;
+thead, td{
+    border: solid #E2E8DD;
 }
 
 button{
     margin-top: 50px;
+}
+
+#help_button{
+    text-align: right;
+}
+
+#help_text{
+    border: solid;
+    width: fit-content;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: white;
+    position: absolute;
+    display: none;
+
+}
+#help_text>p{
+    text-align: left;
+}
+
+@media only screen and (min-width: 1024px) {
+    main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    form, section{
+        width: 700px;
+    }
 }

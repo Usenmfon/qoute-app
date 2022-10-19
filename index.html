@@ -5,19 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/fav-icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/fav-icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/fav-icons/favicon-16x16.png">
+    <link rel="manifest" href="/fav-icons/site.webmanifest">
+    <meta property="og:title" content="Add It Up">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://res.cloudinary.com/usenmfon/image/upload/v1666187668/android-chrome-512x512_gx3qd1.png">
+    <meta property="og:url" content="https://qoute-app.vercel.app/">
+    <meta property="og:description" content="Generate the sum of items with ease and accuracy">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://qoute-app.vercel.app/">
+    <meta property="twitter:title" content="Add It Up">
+    <meta property="twitter:description" content="Generate the sum of items with ease and accuracy">
+    <meta property="twitter:image" content="https://res.cloudinary.com/usenmfon/image/upload/v1666187668/android-chrome-512x512_gx3qd1.png">
+    <title>Add IT UP</title>
 </head>
 <body>
     <main>
+        <div id="help_button" aria-details="help on how to use the app">
+            <i class="fa fa-question-circle fa-2x" aria-hidden="true"></i>
+            <div id="help_text">
+                <p>Enter a list of items and it's prices separated by a space.
+                    <br/>ps: serial number are auto-generated.
+                </p>
+            </div>
+        </div>
         <form>
-            <textarea name="text" id="text" cols="30" rows="10"></textarea>
+            <textarea name="text" placeholder="Enter List here..." aria-placeholder="Enter List here..." id="text" cols="30" rows="10"></textarea>
             <input type="submit" value="Generate">
         </form>
 
-        <button>Recent List</button>
+        <button><i class="fa fa-arrow-left" aria-hidden="true"></i> Recent</button>
 
         <section>
-            <table>
+            <table aria-describedby="table">
                 <thead>
                     <td>S/N</td>
                     <td>Item</td>

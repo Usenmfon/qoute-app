@@ -2,12 +2,24 @@ const formEle = document.forms[0];
 const table_body = document.getElementsByTagName('tbody')[0];
 const section = document.getElementsByTagName('section')[0];
 const recent_button = document.getElementsByTagName('button')[0];
+const help_button = document.getElementsByTagName('div')[0];
+const help_text = document.getElementById('help_text')
+let state = true;
+
+help_button.children[0].addEventListener('click', function(){
+    if(state){
+        help_text.style.display = "block";
+    }else{
+        help_text.style.display = "none";
+    }
+    state = !state;
+})
 
 let arr = []
-let output = []
 
 formEle.addEventListener('submit', function(e){
     e.preventDefault();
+    let output = []
 
     const form = e.currentTarget;
     
@@ -63,6 +75,10 @@ function displayResult(data){
         tr.append(td_1, td_2, td_3)
         table_body.appendChild(tr)
     }
+    
+    let last_child = [...table_body.children].lastIndexOf(tr)
+    table_body.children[last_child].children[0].innerText = "";
+    
 }
 
 recent_button.addEventListener('click', function(){
