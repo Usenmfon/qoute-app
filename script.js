@@ -1,9 +1,13 @@
 const formEle = document.forms[0];
+const table = document.getElementsByTagName('table')[0];
 const table_body = document.getElementsByTagName('tbody')[0];
 const section = document.getElementsByTagName('section')[0];
 const recent_button = document.getElementsByTagName('button')[0];
+const reload_button = document.getElementsByTagName('button')[1];
+const clear_button = document.getElementsByTagName('button')[2];
 const help_button = document.getElementsByTagName('div')[0];
-const help_text = document.getElementById('help_text')
+const help_text = document.getElementById('help_text');
+
 let state = true;
 
 help_button.children[0].addEventListener('click', function(){
@@ -19,6 +23,7 @@ let arr = []
 
 formEle.addEventListener('submit', function(e){
     e.preventDefault();
+    
     let output = []
 
     const form = e.currentTarget;
@@ -52,9 +57,11 @@ function totalSum(obj){
    return sum.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
 }
 
-let tr, td_1, td_2, serial_number = 0;
+let tr, td_1, td_2, td_3, serial_number;
 
 function displayResult(data){
+    section.append(table);
+    // table.append(table_body);
     recent_button.setAttribute('disabled', true)
     if(data){
         section.style.display = "block";
@@ -68,7 +75,7 @@ function displayResult(data){
         td_2 = document.createElement('td');
         td_3 = document.createElement('td');
 
-        td_1.innerText = ++serial_number
+        td_1.innerHTML = `<i class="fa fa-hand-o-right fa-1x" aria-hidden="true"></i>`
         td_2.innerText = data[i].item
         td_3.innerText = data[i].price
 
@@ -76,13 +83,25 @@ function displayResult(data){
         table_body.appendChild(tr)
     }
     
-    let last_child = [...table_body.children].lastIndexOf(tr)
-    table_body.children[last_child].children[0].innerText = "";
-    
+    let index = [...table_body.children]
+    let total_item = index.lastIndexOf(tr);
+    table_body.children[total_item].children[0].innerText = "";
+    table_body.children[total_item].classList.add("total");
+    table_body.children[total_item].children[1].style.fontSize = "1rem";
+    table_body.children[total_item].children[2].style.fontWeight = "700";
 }
 
 recent_button.addEventListener('click', function(){
     let savedItems = JSON.parse(localStorage.getItem('items'))
     recent_button.setAttribute('disabled', true)
     displayResult(savedItems)
+})
+
+clear_button.addEventListener('click', function(){
+    // table_body.remove(tr, td_1, td_2, td_3);
+    table.remove();
+})
+
+reload_button.addEventListener('click', function(){
+    location.reload();
 })

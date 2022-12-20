@@ -28,7 +28,7 @@
             <i class="fa fa-question-circle fa-2x" aria-hidden="true"></i>
             <div id="help_text">
                 <p>Enter a list of items and it's prices separated by a space.
-                    <br/>ps: serial number are auto-generated.
+                    <!-- <br/>ps: serial number are auto-generated. -->
                 </p>
             </div>
         </div>
@@ -36,18 +36,21 @@
             <textarea name="text" placeholder="Enter List here..." aria-placeholder="Enter List here..." id="text" cols="30" rows="10"></textarea>
             <input type="submit" value="Generate">
         </form>
-
-        <button><i class="fa fa-arrow-left" aria-hidden="true"></i> Previous</button>
+        <div class="action_buttons">
+            <button><i class="fa fa-arrow-left" aria-hidden="true"></i> Previous</button>
+            <button><i class="fa fa-refresh" aria-hidden="true"></i></button>
+            <button><i class="fa fa-trash-o" aria-hidden="true"></i> clear</button>
+        </div>
 
         <section>
             <table aria-describedby="table">
-                <thead>
+                <!-- <thead>
                     <td>S/N</td>
                     <td>Item</td>
                     <td>Price</td>
-                </thead>
+                </thead> -->
                <tbody>
-                
+                 
                </tbody>
             </table>
         </section>
