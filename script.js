@@ -10,7 +10,7 @@ const help_text = document.getElementById('help_text');
 
 let state = true;
 
-help_button.children[0].addEventListener('click', function(){
+help_button.children[0].addEventListener('click', function(event){
     if(state){
         help_text.style.display = "block";
     }else{
